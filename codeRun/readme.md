@@ -1,5 +1,5 @@
 ## Description
-This is a sciprt for Competitive Programming, it will compile the single cpp file, setting the input, compare with answer, and copy the code to clipboard.  
+This is a sciprt for Competitive Programming, it will compile the single cpp file, setting single input, compare with answer, timing, and copy the code to clipboard.  
 
 ## Dependence
 ### xclip
