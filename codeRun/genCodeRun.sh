@@ -56,7 +56,8 @@ fi
 DIR="\$(dirname "\$(realpath \$0)")"
 cd \$DIR
 
-g++ ../\$1 -o \$1.bin
+
+g++ ../\$1 -o \$1.bin || exit 1;
 TIME1=\$(date +%s%3N)
 ./\$1.bin <input.txt > output.txt
 TIME2=\$(date +%s%3N)
