@@ -17,6 +17,7 @@ Accept, code is copied to clipbroad.
 Output.
 ----------
 12345
+Time: 6 ms
 ```
 And inside clipboard is 
 ```
