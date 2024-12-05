@@ -57,16 +57,19 @@ DIR="\$(dirname "\$(realpath \$0)")"
 cd \$DIR
 
 g++ ../\$1 -o \$1.bin
+TIME1=\$(date +%s%3N)
 ./\$1.bin <input.txt > output.txt
+TIME2=\$(date +%s%3N)
 
 # -w忽略換行符
 diff -w output.txt answer.txt > /dev/null
 if [ \$? -eq 0 ]; then
   color bright_green "Accept, code is copied to clipbroad."
   xclip -sel clip ../\$1
-  echo "Output."
-  echo "----------"
+  color green "Output."
+  color green "----------"
   cat output.txt
+  color yellow "Time: \$((TIME2 - TIME1)) ms"
 else
   color red "Output."
   color red "----------"
