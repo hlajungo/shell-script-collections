@@ -65,12 +65,17 @@ TIME2=\$(date +%s%3N)
 # -w忽略換行符
 diff -w output.txt answer.txt > /dev/null
 if [ \$? -eq 0 ]; then
-  color bright_green "Accept, code is copied to clipbroad."
-  xclip -sel clip ../\$1
+  color bright_green "Accept."
+  color green "Time: \$((TIME2 - TIME1)) ms"
   color green "Output."
   color green "----------"
   cat output.txt
-  color yellow "Time: \$((TIME2 - TIME1)) ms"
+  # User Input
+  read -p "\$(color bright_cyan 'Copy code to clipboard? (y/yes to confirm)')" confirmation
+
+  if [[ "\$confirmation" =~ ^(y|Y|yes|Yes)$ ]]; then
+    xclip -sel clip ../\$1
+  fi
 else
   color red "Output."
   color red "----------"
