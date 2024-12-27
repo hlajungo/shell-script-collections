@@ -1,1 +1,1 @@
-This script will close your screen.
+This script will only close your screen.
