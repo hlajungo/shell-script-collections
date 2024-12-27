@@ -13,7 +13,7 @@ logexec $? \
 ```
 first param is fixed.  
 second param is "SUCCESS TEXT", when the command above logexec is success, it will be output.  
-third param is "ERROR TEXT", when the command above logexec is failed(not eq 0), it will be output.  
+third param is "ERROR TEXT", when the command above logexec is failed ( $? not eq 0), it will be output.  
 
 t.txt
 ```
