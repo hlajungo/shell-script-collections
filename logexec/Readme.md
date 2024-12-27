@@ -52,5 +52,5 @@ cat \
 t.txt
 SUC
 ```
-The "\" will be detected and find until the command don't have "\".
+The "\\" will be detected and find until the command don't have "\\".
 
