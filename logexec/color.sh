@@ -1,5 +1,6 @@
 #!/bin/bash
 
+if ! declare -f my_function >/dev/null; then
 color()
 {
   if [ "$#" -ne 2 ] ; then
@@ -35,3 +36,4 @@ color()
   echo -e "\e[${colorCode}m${message}"
   echo -en "\e[0m"
 }
+fi
