@@ -25,7 +25,32 @@ After `./AnyShellScript.sh`, on terminal
 cat t.txt
 SUC
 ```
-The command that is logging will be output, and the SUCCESS TEXT will output too, because `cat t.txt` is success.
+The command that is logging will be output, and the SUCCESS TEXT will output too, because `cat t.txt` is successed.
 
+### Usage Example 2
+Same as `Usage Example`, but
+```
+cat \
+  \
+  \
+  \
+\
+t.txt
 
+logexec $? \
+  "SUC" \
+  "ERR"
+```
+Output on terminal will be
+```
+123
+cat \
+  \
+  \
+  \
+\
+t.txt
+SUC
+```
+The "\" will be detected and find until the command don't have "\".
 
