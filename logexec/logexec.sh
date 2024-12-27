@@ -37,5 +37,6 @@ logexec()
   else
     color red "$4"
   fi
+  return $2
 }
 fi
