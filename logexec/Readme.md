@@ -1,4 +1,4 @@
-A shell script function to log.  
+A shell script function to log a command state.  
 ### Dep
 bash
 
