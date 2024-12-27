@@ -1,5 +1,6 @@
 #!/bin/bash
-if ! declare -f my_function >/dev/null; then
+if ! declare -F logexec >/dev/null; then
+
 parentScriptName="$(basename "$(realpath "${BASH_SOURCE[1]}")")"
 parentScriptDir="$(dirname "$(realpath "${BASH_SOURCE[1]}")")"
 
