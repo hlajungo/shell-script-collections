@@ -1,4 +1,5 @@
 #!/bin/bash
+if [[ -z "${MY_FUNCTIONS_INCLUDED+x}" ]]; then
 
 parentScriptName="$(basename "$(realpath "${BASH_SOURCE[1]}")")"
 parentScriptDir="$(dirname "$(realpath "${BASH_SOURCE[1]}")")"
@@ -37,4 +38,4 @@ logexec()
     color red "$4"
   fi
 }
-
+fi
