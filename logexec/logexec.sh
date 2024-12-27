@@ -1,6 +1,5 @@
 #!/bin/bash
-if [[ -z "${MY_FUNCTIONS_INCLUDED+x}" ]]; then
-
+if ! declare -f my_function >/dev/null; then
 parentScriptName="$(basename "$(realpath "${BASH_SOURCE[1]}")")"
 parentScriptDir="$(dirname "$(realpath "${BASH_SOURCE[1]}")")"
 
