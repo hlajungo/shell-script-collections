@@ -53,4 +53,7 @@ t.txt
 SUC
 ```
 The "\\" will be detected and find until the command don't have "\\".
+And the $? of command is returned, so other error control can be continue without temp variable.
+
+
 
