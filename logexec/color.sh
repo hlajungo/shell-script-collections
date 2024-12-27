@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! declare -f my_function >/dev/null; then
+if ! declare -F color >/dev/null; then
 color()
 {
   if [ "$#" -ne 2 ] ; then
