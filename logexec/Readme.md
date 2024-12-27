@@ -7,7 +7,7 @@ AnyShellScript.sh
 ```
 cat t.txt
 
-logexec $? \
+logexec $LINENO $? \
   "SUC" \
   "ERR"
 ```
@@ -37,7 +37,7 @@ cat \
 \
 t.txt
 
-logexec $? \
+logexec $LINENO $? \
   "SUC" \
   "ERR"
 ```
