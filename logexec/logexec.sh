@@ -1,10 +1,15 @@
 #!/bin/bash
 if ! declare -F logexec >/dev/null; then
 
+logexecScriptName="$(basename "$(realpath "${BASH_SOURCE[0]}")")"
+logexecScriptDir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+export -n logexecScriptName
+export -n logexecScriptDir
+
 parentScriptName="$(basename "$(realpath "${BASH_SOURCE[1]}")")"
 parentScriptDir="$(dirname "$(realpath "${BASH_SOURCE[1]}")")"
 
-source "color.sh"
+source "$logexecScriptDir/color.sh"
 
 logexec()
 {
@@ -24,7 +29,7 @@ logexec()
   done
   
   # 輸出最後一行
-  color yellow "$(awk "NR==$1-$backNLine {print prev} {prev=\$0}" "$parentScriptDir/$parentScriptName")"
+  color yellow "$(echo $(awk "NR==$1-$backNLine {print prev} {prev=\$0}" "$parentScriptDir/$parentScriptName") | sed 's/^[ \t]*//' )"
 
   # 吐出 cmdStr
   while [[ ${#cmdStr[@]} -ne 0 ]]; do
@@ -35,7 +40,7 @@ logexec()
   if [ $2 -eq 0 ]; then
     color green "$3"
   else
-    color red "$4"
+    color red "$parentScriptName: $1 $4"
   fi
   return $2
 }
